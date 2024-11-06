@@ -22,19 +22,33 @@ let inLiked = [];
 
 function likeCat() {
   if (i < petsArray.length - 1) {
+    let pet = petsArray[i]
     info.innerHTML = "";
-    image.setAttribute("src", petsArray[i].src);
+    image.setAttribute("src", pet.src);
 
     let h2 = document.createElement("h2");
-    h2.innerText = petsArray[i].catName;
+    h2.innerText = pet.catName;
 
     let p = document.createElement("p");
-    p.innerText = petsArray[i].info;
+    p.innerText = pet.info;
 
     info.appendChild(h2);
     info.appendChild(p);
 
-    i++;
+    likeBtn.onclick = function(){
+      inLiked.push(pet)
+      console.log(inLiked)
+      i++;
+      likeCat()
+    }
+    unLike.onclick = function () {
+      inLiked = inLiked.filter(likedCat => likedCat.catName !== pet.catName);
+      console.log("Liked cats after unliking:", inLiked);
+      i++;  
+      likeCat(); 
+    };
+
+    
   }else {
     
     info.innerHTML = "";
@@ -52,8 +66,7 @@ function likeCat() {
     div.appendChild(problem);
     div.appendChild(message);
   }
+  
 }
 
-// function unLike(){
-    
-// }
+likeCat();
