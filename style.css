@@ -110,3 +110,31 @@ padding-left: 20px;
     font-weight: 400;
     margin: 10px;
 }
+
+@media (max-width : 768px){
+    #profile{
+        display: none;
+    }
+    .cardContainer{
+        height: 450px;
+    }
+    #petsCardInfos img{
+        width: 400px;
+        height: 300px;
+        border-radius: 20px 20px 0 0;
+    }
+    #petsCardInfos{
+        background-color: #1E88A3;
+        width: 400px;
+        height: 450px;
+        border-radius: 20px 20px 0 0;
+    }
+    #card{
+        background-color: #4A90E2;
+        width: 400px;
+        height: 580px;
+        border-radius: 20px;
+        margin-top: 20;
+    }
+
+}
